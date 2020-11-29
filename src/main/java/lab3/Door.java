@@ -20,6 +20,6 @@ public class Door extends Furniture{
     }
     @Override
     public boolean equals(Object obj) {
-        return (obj instanceof Door) && (obj.hashCode() == this.hashCode());
+        return (obj instanceof Door) && (((Door)obj).condition == this.condition);
     }
 }

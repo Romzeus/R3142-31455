@@ -17,6 +17,6 @@ public class Food {
 
     @Override
     public boolean equals(Object A) {
-        return (A instanceof Food) && (A.hashCode() == this.hashCode());
+        return (A instanceof Food) && (A.toString().equals(this.toString()));
     }
 }

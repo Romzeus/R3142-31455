@@ -20,4 +20,8 @@ public class Dunno extends Shorty implements Controller{
     public void interact(Interactable A){
         A.use();
     }
+    @Override
+    public boolean equals(Object obj){
+        return (obj instanceof Dunno) && (obj.toString().equals(this.toString()));
+    }
 }

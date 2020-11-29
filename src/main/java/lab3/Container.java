@@ -38,6 +38,6 @@ public class Container extends Furniture{
     }
     @Override
     public boolean equals(Object obj){
-        return (obj instanceof Container) && (obj.hashCode() == this.hashCode());
+        return (obj instanceof Container) && (((Container)obj).getFoodName().equals(this.getFoodName())) && (((Container)obj).getCondition() == this.getCondition());
     }
 }

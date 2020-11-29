@@ -16,9 +16,12 @@ public class Donut extends Shorty implements FallGuy{
         condition = true;
         System.out.println(this.toString() + " падает");
     }
-
     @Override
     public boolean isFallen() {
         return condition;
+    }
+    @Override
+    public boolean equals(Object obj){
+        return (obj instanceof Donut) && (obj.toString().equals(this.toString())) && (((Donut)obj).isFallen() == this.isFallen());
     }
 }

@@ -24,6 +24,6 @@ public class Button implements Controller, Interactable{
     }
     @Override
     public boolean equals(Object obj){
-        return (obj instanceof Button) && (obj.hashCode() == this.hashCode());
+        return (obj instanceof Button) && (((Button)obj).getFurn().equals(this.getFurn()));
     }
 }
