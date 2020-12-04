@@ -1,15 +1,11 @@
-public class Button implements Controller, Interactable{
+public class Button implements Interactable{
     private Furniture furn;
     public Button(Furniture furn){
         this.furn = furn;
     }
-    @Override
-    public void interact(Interactable A){
-        A.use();
-    }
     public void use(){
         System.out.print("Кнопку нажали: ");
-        interact(furn);
+        this.furn.use();
     }
     public Furniture getFurn() {
         return furn;
@@ -24,6 +20,6 @@ public class Button implements Controller, Interactable{
     }
     @Override
     public boolean equals(Object obj){
-        return (obj instanceof Button) && (obj.hashCode() == this.hashCode());
+        return (obj instanceof Button) && (((Button)obj).getFurn().equals(this.getFurn()));
     }
 }

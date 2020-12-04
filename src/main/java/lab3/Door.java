@@ -1,16 +1,16 @@
 public class Door extends Furniture{
     public Door(){
-        condition = Openness.OPEN;
+        super(true);
     }
     @Override
     public void use(){
         this.changeCondition();
-        System.out.println(this.toString() + " " + this.getCondition() + "а");
+        System.out.println(this.toString() + " " + (this.getCondition() ? "открыта" : "закрыта"));
     }
     @Override
     public int hashCode(){
         int result = 0;
-        if (this.condition == Openness.OPEN)
+        if (this.getCondition())
             result = 1;
         return result;
     }
@@ -20,6 +20,6 @@ public class Door extends Furniture{
     }
     @Override
     public boolean equals(Object obj) {
-        return (obj instanceof Door) && (obj.hashCode() == this.hashCode());
+        return (obj instanceof Door) && (((Door)obj).getCondition() == this.getCondition());
     }
 }

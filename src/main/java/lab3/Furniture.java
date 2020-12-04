@@ -1,21 +1,15 @@
 public abstract class Furniture implements Interactable{
-    protected Openness condition;
-    public Furniture(){
-        condition = Openness.CLOSE;
+    private boolean openess;
+    public Furniture(boolean condition){
+        openess = condition;
     }
     public void changeCondition() {
-        switch (this.condition){
-            case OPEN:
-                this.condition = Openness.CLOSE;
-                break;
-            case CLOSE:
-                this.condition = Openness.OPEN;
-                break;
-        }
+        if (openess)
+            openess = false;
+        else
+            openess = true;
     }
-    public String getCondition(){
-        return condition.Condition();
+    public boolean getCondition(){
+        return openess;
     }
-    @Override
-    public abstract void use();
 }

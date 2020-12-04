@@ -12,8 +12,4 @@ public abstract class Shorty{
     public int hashCode(){
         return (name.hashCode() * 2);
     }
-    @Override
-    public boolean equals(Object obj){
-        return (obj instanceof Shorty) && (obj.hashCode() == this.hashCode());
-    }
 }

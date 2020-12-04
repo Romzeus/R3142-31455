@@ -2,7 +2,7 @@ public class Container extends Furniture{
     FurnType naming;
     Food food;
     public Container(FurnType naming, Food food){
-        super();
+        super(false);
         this.naming = naming;
         this.food = food;
     }
@@ -12,7 +12,7 @@ public class Container extends Furniture{
     @Override
     public void use(){
         this.changeCondition();
-        System.out.println(this.naming.type() + " " + this.getCondition());
+        System.out.println(this.naming.type() + " " + (this.getCondition() ? "открыт": "закрыт"));
     }
     @Override
     public int hashCode(){
@@ -38,6 +38,6 @@ public class Container extends Furniture{
     }
     @Override
     public boolean equals(Object obj){
-        return (obj instanceof Container) && (obj.hashCode() == this.hashCode());
+        return (obj instanceof Container) && (((Container)obj).getFoodName().equals(this.getFoodName())) && (((Container)obj).getCondition() == this.getCondition());
     }
 }
