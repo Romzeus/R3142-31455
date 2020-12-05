@@ -16,5 +16,7 @@ public class Main {
             ((Dunno)dun).interact(but);
             don.see(but.getFurn());
         }
+        ((Donut)don).changeSadness(-3);
+        don.see(buttons[2].getFurn());
     }
 }
