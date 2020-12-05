@@ -1,6 +1,6 @@
 public class Container extends Furniture{
-    FurnType naming;
-    Food food;
+    private final FurnType naming;
+    private final Food food;
     public Container(FurnType naming, Food food){
         super(false);
         this.naming = naming;

@@ -1,5 +1,5 @@
 public class Donut extends Shorty implements FallGuy{
-    boolean condition = false;
+    private boolean condition = false;
     public Donut(String name){
         super(name);
     }

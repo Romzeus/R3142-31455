@@ -1,23 +1,10 @@
 public enum FurnType {
-    FRIDGE{
-        @Override
-        public String type(){
-            return "холодильник";
-        }
-    },
-    TERMOSTAT{
-        @Override
-        public String type(){
-            return "термостат";
-        }
-    },
-    LOCKER{
-        @Override
-        public String type(){
-            return "шкаф";
-        }
-    };
+    FRIDGE("холодильник"),
+    TERMOSTAT("термостат"),
+    LOCKER("шкаф");
+    private final String naming;
+    FurnType(String naming){this.naming = naming;}
     public String type(){
-        return "фурнитура";
+        return this.naming;
     }
 }

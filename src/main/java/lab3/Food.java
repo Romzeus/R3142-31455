@@ -1,5 +1,5 @@
 public class Food {
-    private String foodName;
+    private final String foodName;
     public Food(){
         foodName = "пищевой продукт";
     }

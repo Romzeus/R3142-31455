@@ -1,5 +1,5 @@
 public abstract class Shorty{
-    private String name;
+    private final String name;
     Shorty(String name){
         this.name = name;
     }

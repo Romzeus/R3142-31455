@@ -1,5 +1,5 @@
 public class Button implements Interactable{
-    private Furniture furn;
+    private final Furniture furn;
     public Button(Furniture furn){
         this.furn = furn;
     }
