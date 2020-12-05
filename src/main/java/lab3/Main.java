@@ -1,22 +1,23 @@
 public class Main {
     public static void main(String[] args){
-        Shorty dun = new Dunno("Незнайка");
-        Shorty don = new Donut("Пончик");
-        Button doorButton = ButtonFactory.getDoorButton();
-        Button[] buttons = new Button[3];
+        Dunno dunno = new Dunno("Незнайка");
+        Donut donut = new Donut("Пончик");
         String naming = "пищевой продукт";
-        buttons[0] = ButtonFactory.getButton(naming, FurnType.FRIDGE);
-        buttons[1] = ButtonFactory.getButton(naming, FurnType.LOCKER);
-        buttons[2] = ButtonFactory.getButton(naming, FurnType.TERMOSTAT);
-        ((FallGuy)don).fall();
-        dun.see(don);
-        ((Dunno)dun).interact(doorButton);
-        ((Dunno)dun).speak("");
-        for (Button but : buttons){
-            ((Dunno)dun).interact(but);
-            don.see(but.getFurn());
+        Button doorButton = ButtonFactory.getDoorButton();
+        Button[] buttons = {
+                ButtonFactory.getButton(naming, FurnitureType.FRIDGE),
+                ButtonFactory.getButton(naming, FurnitureType.LOCKER),
+                ButtonFactory.getButton(naming, FurnitureType.TERMOSTAT)
+        };
+        donut.fall();
+        dunno.see(donut);
+        dunno.interact(doorButton);
+        dunno.speak("");
+        for (Button button : buttons){
+            dunno.interact(button);
+            donut.see(button.getFurniture());
         }
-        ((Donut)don).changeSadness(-3);
-        don.see(buttons[2].getFurn());
+        donut.changeSadness(-3);
+        donut.see(buttons[2].getFurniture());
     }
 }

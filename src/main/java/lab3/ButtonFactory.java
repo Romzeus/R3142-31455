@@ -1,8 +1,8 @@
 public class ButtonFactory {
     public static Button getButton(){
-        return ButtonFactory.getButton("пищевой продукт", FurnType.FRIDGE);
+        return ButtonFactory.getButton("пищевой продукт", FurnitureType.FRIDGE);
     }
-    public static Button getButton(String foodName, FurnType ftype){
+    public static Button getButton(String foodName, FurnitureType ftype){
         Food food = new Food(foodName);
         Furniture furniture = new Container(ftype, food);
         Button button = new Button(furniture);

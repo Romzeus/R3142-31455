@@ -3,24 +3,23 @@ public class Dunno extends Shorty implements Controller{
         super(name);
     }
     @Override
-    public void see(Object A) {
-        System.out.print(this.toString() + " видит: " + A.toString());
-        if (A instanceof FallGuy)
-            if (((FallGuy)A).isFallen())
-                System.out.println(" упал");
-            else
-                System.out.println(" стоит");
+    public void see(Object object) {
+        System.out.print(this.toString() + " видит: " + object.toString());
+        if (object instanceof FallGuy)
+            System.out.println(((FallGuy) object).isFallen() ? " упал" : " стоит");
     }
     public void speak(String message){
         System.out.println(this.toString() + " говорит с широкой улыбкой: " + message);
     }
     @Override
-    public void interact(Interactable A){
-        System.out.println(this.toString() + " использует " + A.toString());
-        A.use();
+    public void interact(Interactable object){
+        System.out.println(this.toString() + " использует " + object.toString());
+        object.use();
     }
     @Override
-    public boolean equals(Object obj){
-        return (obj instanceof Dunno) && (obj.toString().equals(this.toString()));
+    public boolean equals(Object object){
+        if (object instanceof Dunno)
+            return (object.toString().equals(this.toString()));
+        return false;
     }
 }

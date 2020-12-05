@@ -4,10 +4,7 @@ public abstract class Furniture implements Interactable{
         openess = condition;
     }
     public void changeCondition() {
-        if (openess)
-            openess = false;
-        else
-            openess = true;
+        openess = !openess;
     }
     public boolean getCondition(){
         return openess;

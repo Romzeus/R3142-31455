@@ -1,7 +1,7 @@
 public class Container extends Furniture{
-    private final FurnType naming;
+    private final FurnitureType naming;
     private final Food food;
-    public Container(FurnType naming, Food food){
+    public Container(FurnitureType naming, Food food){
         super(false);
         this.naming = naming;
         this.food = food;
@@ -27,6 +27,8 @@ public class Container extends Furniture{
             case FRIDGE:
                 i += 3;
                 break;
+            default:
+                i += 0;
         }
         if (food.toString().equals("пищевой продукт"))
             i += 1;
@@ -38,6 +40,8 @@ public class Container extends Furniture{
     }
     @Override
     public boolean equals(Object obj){
-        return (obj instanceof Container) && (((Container)obj).getFoodName().equals(this.getFoodName())) && (((Container)obj).getCondition() == this.getCondition());
+        if (obj instanceof Container)
+            return (((Container)obj).getFoodName().equals(this.getFoodName())) && (((Container)obj).getCondition() == this.getCondition());
+        return false;
     }
 }

@@ -9,17 +9,16 @@ public class Door extends Furniture{
     }
     @Override
     public int hashCode(){
-        int result = 0;
-        if (this.getCondition())
-            result = 1;
-        return result;
+        return (this.getCondition() ? 1 : 0);
     }
     @Override
     public String toString() {
         return "Дверь";
     }
     @Override
-    public boolean equals(Object obj) {
-        return (obj instanceof Door) && (((Door)obj).getCondition() == this.getCondition());
+    public boolean equals(Object object) {
+        if (object instanceof Door)
+            return (((Door)object).getCondition() == this.getCondition());
+        return false;
     }
 }

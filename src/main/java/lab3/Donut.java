@@ -6,12 +6,13 @@ public class Donut extends Shorty implements FallGuy{
         sadness = 3;
     }
     @Override
-    public void see(Object A){
+    public void see(Object object){
         System.out.print(this.toString() + " видит ");
-        if ((A instanceof Container) && (((Furniture)A).getCondition()))
-            System.out.println(((Container)A).getFoodName() + ", " + (this.sadness > 0 ? "но даже это его не " : "и это его ") + "радует");
+        if (object instanceof Container)
+            if (((Furniture)object).getCondition())
+                System.out.println(((Container)object).getFoodName() + ", " + (this.sadness > 0 ? "но даже это его не " : "и это его ") + "радует");
         else
-            System.out.println(A.toString());
+            System.out.println(object.toString());
     }
     @Override
     public void fall(){
@@ -26,7 +27,9 @@ public class Donut extends Shorty implements FallGuy{
         return condition;
     }
     @Override
-    public boolean equals(Object obj){
-        return (obj instanceof Donut) && (obj.toString().equals(this.toString())) && (((Donut)obj).isFallen() == this.isFallen());
+    public boolean equals(Object object){
+        if (object instanceof Donut)
+            return (object.toString().equals(this.toString())) && (((Donut)object).isFallen() == this.isFallen());
+        return false;
     }
 }

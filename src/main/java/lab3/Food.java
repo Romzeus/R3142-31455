@@ -16,7 +16,9 @@ public class Food {
     }
 
     @Override
-    public boolean equals(Object A) {
-        return (A instanceof Food) && (A.toString().equals(this.toString()));
+    public boolean equals(Object object) {
+        if (object instanceof Food)
+            return (object.toString().equals(this.toString()));
+        return false;
     }
 }
